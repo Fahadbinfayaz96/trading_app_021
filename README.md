@@ -1,17 +1,51 @@
-# trading_app_021
+# Trading App 021
 
-A new Flutter project.
+A Flutter trading app with live mock market data, watchlists, holdings, and simulated order execution.
 
-## Getting Started
+## Stack
 
-This project is a starting point for a Flutter application.
+* Flutter (stable channel)
+* BLoC / Cubit (`flutter_bloc`)
+* GoRouter
+* `flutter_screenutil`
+* `shared_preferences`
+* `intl`
 
-A few resources to get you started if this is your first Flutter project:
+## Run Instructions
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+```markdown
+No backend setup needed — the app uses an in-memory mock market feed.
+```
+```bash
+flutter pub get
+flutter run
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Features
+
+* **Watchlist** — Create multiple watchlists, add, remove, and reorder stocks, view live prices, and tap stocks to trade.
+* **Market Overview** — View 10 stocks with live price ticks and green/red price-change animations.
+* **Buy/Sell Ticket** — Live LTP, quantity validation, balance and quantity checks, and order confirmation.
+* **Holdings** — Live P&L, sortable holdings, aggregate summary, and empty state.
+
+## Architecture
+
+```text
+lib/
+├── core/          # Theme, constants, extensions
+├── data/          # Models, mock feed, repositories
+├── presentation/  # BLoCs, screens, widgets
+├── router/        # GoRouter
+└── di/            # Dependency injection
+```
+
+## Notes
+
+* Prices are stored as integer paise (`1 = 100 paise`) to avoid floating-point precision issues.
+* A single mock market feed broadcasts price updates to all screens through a `Stream`.
+* All relevant data persists across app restarts.
+* Uses 10 stocks: RELIANCE, TCS, INFY, HDFCBANK, ICICIBANK, SBIN, ITC, LT, BHARTIARTL, AXISBANK
+
+## Video
+
+[Watch the app demo](https://drive.google.com/file/d/1EUAfrjwEfgrsZjpgUtQZE-v1Z-HurehP/view?usp=sharing)
