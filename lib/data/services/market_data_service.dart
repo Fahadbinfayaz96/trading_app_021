@@ -88,11 +88,9 @@ class MarketDataService {
     final random = Random();
     for (final entry in _stocks.entries) {
       final stock = entry.value;
-      // Random walk: ±0.3% max change per tick
       final changePercent = (random.nextDouble() - 0.5) * 0.006;
       final change = (stock.ltpPaise * changePercent).round();
       final newLtp = stock.ltpPaise + change;
-      // Clamp to positive
       if (newLtp > 0) {
         _stocks[stock.symbol] = stock.copyWith(
           ltpPaise: newLtp,

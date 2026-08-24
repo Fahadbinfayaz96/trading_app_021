@@ -92,7 +92,6 @@ class _HoldingsScreenState extends State<HoldingsScreen> {
                 livePrices,
               );
 
-              // Calculate aggregates
               int totalInvested = 0;
               int totalCurrent = 0;
               for (final h in holdingsState.holdings) {
@@ -109,7 +108,6 @@ class _HoldingsScreenState extends State<HoldingsScreen> {
 
               return Column(
                 children: [
-                  // Aggregate Summary Card
                   Container(
                     margin: EdgeInsets.fromLTRB(16.w, 16.h, 16.w, 8.h),
                     padding: EdgeInsets.all(20.w),
@@ -180,7 +178,6 @@ class _HoldingsScreenState extends State<HoldingsScreen> {
 
                   SizedBox(height: 4.h),
 
-                  // Holdings List
                   Expanded(
                     child: ListView.separated(
                       padding: EdgeInsets.fromLTRB(16.w, 8.h, 16.w, 16.h),

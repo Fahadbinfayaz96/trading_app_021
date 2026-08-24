@@ -11,8 +11,7 @@ class HoldingModel extends Equatable {
     required this.avgCostPaise,
   });
 
-  int get currentValuePaise =>
-      quantity * avgCostPaise; // placeholder, use live LTP in UI
+  int get currentValuePaise => quantity * avgCostPaise;
 
   HoldingModel copyWith({String? symbol, int? quantity, int? avgCostPaise}) {
     return HoldingModel(

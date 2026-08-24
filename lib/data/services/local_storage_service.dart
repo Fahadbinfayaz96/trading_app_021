@@ -17,7 +17,6 @@ class LocalStorageService {
     await _prefs?.setString(AppConstants.prefWatchlists, jsonEncode(data));
   }
 
-  // Synchronous getter (No Future needed)
   List<Map<String, dynamic>>? getWatchlists() {
     final raw = _prefs?.getString(AppConstants.prefWatchlists);
     if (raw == null) return null;

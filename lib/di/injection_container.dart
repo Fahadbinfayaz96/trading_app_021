@@ -14,7 +14,6 @@ import '../presentation/cubits/watchlist_cubit/watchlist_cubit.dart';
 final getIt = GetIt.instance;
 
 Future<void> initDependencies() async {
-  // Services
   final localStorage = LocalStorageService();
   await localStorage.init();
   getIt.registerSingleton<LocalStorageService>(localStorage);
@@ -22,7 +21,6 @@ Future<void> initDependencies() async {
   final marketService = MarketDataService();
   getIt.registerSingleton<MarketDataService>(marketService);
 
-  // Repositories
   getIt.registerLazySingleton<MarketRepository>(
     () => MarketRepositoryImpl(getIt()),
   );
@@ -39,7 +37,6 @@ Future<void> initDependencies() async {
     () => WalletRepositoryImpl(getIt()),
   );
 
-  // Cubits (singletons for global state)
   getIt.registerSingleton<MarketCubit>(MarketCubit(getIt()));
   getIt.registerSingleton<WatchlistCubit>(WatchlistCubit(getIt()));
   getIt.registerSingleton<HoldingsCubit>(HoldingsCubit(getIt()));

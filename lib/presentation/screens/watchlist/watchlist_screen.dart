@@ -115,7 +115,6 @@ class _WatchlistScreenState extends State<WatchlistScreen> {
 
               SizedBox(height: 8.h),
 
-              // Stock list
               Expanded(
                 child: active == null || active.stockSymbols.isEmpty
                     ? _buildEmptyState()

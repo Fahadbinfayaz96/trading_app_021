@@ -64,7 +64,6 @@ class _OrderScreenState extends State<OrderScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Stock Selector & Live Price
                 BlocBuilder<OrderCubit, OrderState>(
                   builder: (context, orderState) {
                     return BlocBuilder<MarketCubit, MarketState>(
@@ -193,7 +192,6 @@ class _OrderScreenState extends State<OrderScreen> {
 
                 SizedBox(height: 20.h),
 
-                // Buy / Sell Toggle
                 BlocBuilder<OrderCubit, OrderState>(
                   builder: (context, state) {
                     return Container(
@@ -259,7 +257,6 @@ class _OrderScreenState extends State<OrderScreen> {
 
                 SizedBox(height: 20.h),
 
-                // Order Value & Balance
                 BlocBuilder<OrderCubit, OrderState>(
                   builder: (context, orderState) {
                     return BlocBuilder<WalletCubit, WalletState>(
@@ -336,7 +333,6 @@ class _OrderScreenState extends State<OrderScreen> {
 
                 SizedBox(height: 24.h),
 
-                // Error
                 BlocBuilder<OrderCubit, OrderState>(
                   builder: (context, state) {
                     if (state.error == null) return const SizedBox.shrink();
@@ -354,7 +350,6 @@ class _OrderScreenState extends State<OrderScreen> {
                   },
                 ),
 
-                // Submit Button
                 BlocBuilder<OrderCubit, OrderState>(
                   builder: (context, state) {
                     final isValid =
