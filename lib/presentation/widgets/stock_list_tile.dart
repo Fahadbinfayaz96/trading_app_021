@@ -37,15 +37,15 @@ class StockListTile extends StatelessWidget {
           child: InkWell(
             onTap: onTap,
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
+              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
               child: Row(
                 children: [
                   Container(
-                    width: 42.w,
-                    height: 42.w,
+                    width: 45.w,
+                    height: 60.w,
                     decoration: BoxDecoration(
-                      color: changeColor.withValues(alpha: 0.14),
-                      borderRadius: BorderRadius.circular(12.r),
+                      color: changeColor.withValues(alpha: 0.2),
+                      borderRadius: BorderRadius.circular(10.r),
                     ),
                     alignment: Alignment.center,
                     child: Text(
@@ -83,6 +83,7 @@ class StockListTile extends StatelessWidget {
                       ],
                     ),
                   ),
+
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.end,
@@ -95,7 +96,7 @@ class StockListTile extends StatelessWidget {
                           color: Theme.of(context).colorScheme.onSurface,
                         ),
                       ),
-                      SizedBox(height: 4.h),
+                      SizedBox(height: 15.h),
                       Container(
                         padding: EdgeInsets.symmetric(
                           horizontal: 7.w,
@@ -129,7 +130,6 @@ class StockListTile extends StatelessWidget {
                     ],
                   ),
                   if (showRemove) ...[
-                    SizedBox(width: 4.w),
                     IconButton(
                       icon: Icon(
                         Icons.remove_circle_outline,

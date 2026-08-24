@@ -115,23 +115,11 @@ class MarketScreen extends StatelessWidget {
                           ),
                         ),
                       ),
+
                       Expanded(
                         flex: 2,
                         child: Text(
-                          'CHANGE',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w800,
-                            color: AppColors.secondary,
-                            letterSpacing: 0.6,
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        flex: 2,
-                        child: Text(
-                          'LTP',
+                          'CHANGE / LTP',
                           textAlign: TextAlign.right,
                           style: TextStyle(
                             fontSize: 10.sp,
@@ -165,7 +153,7 @@ class MarketScreen extends StatelessWidget {
                       margin: EdgeInsets.only(bottom: 10.h),
                       decoration: BoxDecoration(
                         color: Theme.of(context).colorScheme.surface,
-                        borderRadius: BorderRadius.circular(16.r),
+                        borderRadius: BorderRadius.circular(10.r),
                         boxShadow: [
                           BoxShadow(
                             color: Colors.black.withValues(alpha: 0.05),
